@@ -24,38 +24,33 @@ const jogosMock = [
 export default function ListaScreen({ route }) {
   const [itensSalvos, setItensSalvos] = useState(jogosMock);
 
-  // Para receber um jogo salvo da DetalheScreen via route.params:
-  // if (route.params?.novoJogo) {
-  //   setItensSalvos(prev => [...prev, route.params.novoJogo]);
-  // }
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        {/* TODO: renomeie o titulo para o seu tema */}
         <Text style={styles.headerTitulo}>Minha Lista</Text>
       </View>
 
       <FlatList
         data={itensSalvos}
         keyExtractor={(item) => item.id.toString()}
+        // 2. Atualizado para renderizar o CardJogo com as suas devidas props
         renderItem={({ item }) => (
-          // TODO: crie o arquivo src/components/CardJogo.js
-          // O componente CardJogo deve receber as props: titulo, genero, plataforma e nota
-          // Depois substitua este bloco por:
-          // <CardJogo titulo={item.titulo} genero={item.genero} plataforma={item.plataforma} nota={item.nota} />
-          <View style={styles.card} />
+          <CardJogo 
+            titulo={item.titulo} 
+            genero={item.genero} 
+            plataforma={item.plataforma} 
+            nota={item.nota} 
+          />
         )}
         ListEmptyComponent={
           <View style={styles.conteudo}>
             <View style={styles.iconeContainer}>
-              {/* TODO: troque pela inicial do seu tema */}
               <Text style={styles.icone}>G</Text>
             </View>
             <Text style={styles.titulo}>Nenhum jogo salvo</Text>
-            <Text style={styles.descricao}>Sua lista aparecera aqui</Text>
+            <Text style={styles.descricao}>Sua lista aparecerá aqui</Text>
             <Text style={styles.dica}>
-              Acesse um jogo e toque em "Adicionar a Lista" para salva-lo aqui.
+              Acesse um jogo e toque em "Adicionar a Lista" para salvá-lo aqui.
             </Text>
           </View>
         }
@@ -65,7 +60,6 @@ export default function ListaScreen({ route }) {
   );
 }
 
-// TODO: ajuste as cores para o tema do seu app
 const styles = StyleSheet.create({
   container: {
     flex: 1,
