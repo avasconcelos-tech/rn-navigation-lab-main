@@ -1,6 +1,4 @@
-// TODO: estilizar esta tela com as cores e identidade visual do seu tema
-// TODO: importar useState — adicione a linha abaixo no topo:
-// import { useState } from 'react';
+import { useState } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -10,35 +8,31 @@ import {
   View,
 } from "react-native";
 
-// Dados de fallback — usados enquanto a navegacao nao estiver configurada
 const jogoMock = {
-  titulo: "The Legend of Zelda: Breath of the Wild",
-  genero: "Aventura / Mundo Aberto",
-  plataforma: "Nintendo Switch",
+  titulo: "The Last of Us",
+  genero: "Aventura / Acao / sobrevivencia ",
+  plataforma: "PlayStation 5 e PC",
   nota: "10/10",
   sinopse:
-    "Explore um vasto mundo aberto em Hyrule. Resolva puzzles, enfrente inimigos e descubra segredos em uma das aventuras mais aclamadas da historia dos games.",
+    "The Last of Us se passa em um mundo pós-apocalíptico devastado por um fungo mutante que transforma humanos em criaturas agressivas.",
 };
 
-// TODO: adicionar { route, navigation } como parametros quando a navegacao estiver configurada
-// Os dados chegam via route.params quando o usuario toca em um jogo na HomeScreen
-export default function DetalheScreen() {
-  // Defina os parâmetros de rota, pegando todos os campos presentes no objeto JOGOS definido na HomeScreen
-  // const { titulo... } = route?.params ?? jogoMock;
+export default function DetalheScreen({ route, navigation}) {
 
-  // TODO: estado booleano para controlar se o jogo foi salvo na lista
-  // const [isSalvo, setIsSalvo] = useState(false);
+  const { titulo, genero, plataforma, nota, sinopse } = route.params ?? jogoMock;
+
+  const [isSalvo, setIsSalvo] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.hero}>
-          {/* TODO: substituir pela inicial do titulo ou outro elemento do seu tema */}
           <View style={styles.heroIcone}>
             <Text style={styles.heroIconeTexto}>{titulo[0]}</Text>
           </View>
           <Text style={styles.heroTitulo}>{titulo}</Text>
           <Text style={styles.heroSubtitulo}>{genero}</Text>
+          
           <View style={styles.heroMeta}>
             <View style={styles.metaItem}>
               <Text style={styles.metaLabel}>Plataforma</Text>
@@ -57,19 +51,18 @@ export default function DetalheScreen() {
           <Text style={styles.detalheTexto}>{sinopse}</Text>
         </View>
 
-        {/* TODO: quando implementar o estado isSalvo, use:
-            onPress={() => setIsSalvo(prev => !prev)}
-            style={[styles.botao, isSalvo && styles.botaoAtivo]}
-            texto: isSalvo ? 'Remover da Lista' : 'Adicionar a Lista' */}
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Adicionar a Lista</Text>
+        <TouchableOpacity
+          style={[styles.botao, isSalvo && styles.botaoAtivo]}
+           onPress={() => setIsSalvo(prev => !prev)}
+           >
+          <Text style={styles.botaoTexto}>
+            {isSalvo ? 'Remover da Lista' : 'Adicionar a Lista'}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-// TODO: estilizar com as cores e identidade visual do seu tema
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -165,7 +158,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 32,
   },
-  // TODO: estilizar o estado ativo do botao com a cor do seu tema
   botaoAtivo: {
     backgroundColor: "#555555",
   },

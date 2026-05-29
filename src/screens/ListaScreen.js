@@ -1,18 +1,15 @@
-// TODO: estilizar esta tela com as cores e identidade visual do seu tema
-
 import { useState } from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
-// TODO: apos criar o componente CardJogo, importe-o aqui:
-// import { CardJogo } from '../components';
+import { CardJogo } from '../components';
 
 // Dados de exemplo para voce visualizar o renderItem funcionando
 // Em um app real, esses itens chegariam via route.params enviados pela DetalheScreen
 const jogosMock = [
   {
-    id: "1",
-    titulo: "The Legend of Zelda: Breath of the Wild",
-    genero: "Aventura / Mundo Aberto",
-    plataforma: "Nintendo Switch",
+   id: "1",
+    titulo: "The Last of Us",
+    genero: "Aventura / Acao / sobrevivencia ",
+    plataforma: "PlayStation 5 e PC",
     nota: "10/10",
   },
   {
