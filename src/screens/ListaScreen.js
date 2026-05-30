@@ -122,13 +122,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 20, // Espaçamento entre as linhas da dica
   },
-  card: {
-    backgroundColor: '#1A0F30', // Roxo fechado para o corpo do card
-    marginHorizontal: 16,
-    marginTop: 12,
-    borderRadius: 12,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: '#241445', // Borda interna sutil para dar profundidade
-  },
 });
