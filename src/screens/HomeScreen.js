@@ -66,8 +66,8 @@ const jogos = [
   },
 ];
 
-export default function HomeScreen({ navigation }) { 
-  const [busca, setBusca] = useState(""); 
+export default function HomeScreen({ navigation }) {
+  const [busca, setBusca] = useState("");
   const [jogosFiltrados, setJogosFiltrados] = useState(jogos);
 
   useEffect(() => {
@@ -108,16 +108,24 @@ export default function HomeScreen({ navigation }) {
           style={styles.buscaInput}
           placeholder="Buscar jogo..."
           placeholderTextColor="#999"
-          value={busca}          
-          onChangeText={setBusca} 
+          value={busca}
+          onChangeText={setBusca}
         />
       </View>
 
       {/* Lista de jogos */}
       <FlatList
-        data={jogosFiltrados} 
+        data={jogosFiltrados}
         keyExtractor={(item) => item.id}
-        renderItem={renderItem}
+        renderItem={({ item }) => (
+          <CardJogo
+            titulo={item.titulo}
+            genero={item.genero}
+            plataforma={item.plataforma}
+            nota={item.nota}
+            onPress={() => navigation.navigate('Detalhe', { ...item })}
+          />
+        )}
         contentContainerStyle={styles.lista}
         showsVerticalScrollIndicator={false}
       />

@@ -1,16 +1,19 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default function CardJogo({ titulo, genero, plataforma, nota }) {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.7}>
+
       <View style={styles.infoContainer}>
         <Text style={styles.titulo}>{titulo}</Text>
-        <Text style={styles.subtitulo}>{genero} • {plataforma}</Text>
+        <Text style={styles.subtitulo}>{genero}</Text>
       </View>
+
       <View style={styles.notaContainer}>
         <Text style={styles.notaTexto}>{nota}</Text>
       </View>
-    </View>
+
+    </TouchableOpacity>
   );
 }
 
