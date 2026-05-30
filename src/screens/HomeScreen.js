@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import CardJogo from '../components/CardJogo';
 
 const jogos = [
   {
