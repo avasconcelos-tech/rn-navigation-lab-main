@@ -124,7 +124,6 @@ export default function HomeScreen({ navigation }) {
     </SafeAreaView>
   );
 }
-import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
