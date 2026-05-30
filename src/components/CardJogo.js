@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, onPress } from "react-native";
 
-export default function CardJogo({ titulo, genero, plataforma, nota }) {
+export default function CardJogo({ titulo, genero, plataforma, nota, onPress }) {
   return (
     <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.7}>
 
