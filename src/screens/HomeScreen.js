@@ -9,7 +9,6 @@ import {
   View,
 } from "react-native";
 
-// TODO: substituir pelos jogos que voce escolheu
 const jogos = [
   {
     id: "1",
@@ -125,84 +124,70 @@ export default function HomeScreen({ navigation }) {
     </SafeAreaView>
   );
 }
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  buscaContainer: {
-    backgroundColor: "#FFFFFF",
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#E0E0E0",
-  },
-  buscaInput: {
-    backgroundColor: "#F0F0F0",
-    borderRadius: 8,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    fontSize: 14,
-    color: "#1A1A1A",
-  },
   container: {
     flex: 1,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: '#0A0512', // Preto profundo com fundo levemente arroxeado
   },
   header: {
-    backgroundColor: "#333333",
+    backgroundColor: '#140927', // Roxo bem escuro para destacar o topo
     paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 24,
+    paddingTop: 24,
+    paddingBottom: 28,
+    borderBottomWidth: 2,
+    borderBottomColor: '#3C1670', // Linha sutil em roxo intermediário
   },
   headerTitulo: {
-    fontSize: 26,
-    fontWeight: "bold",
-    color: "#FFFFFF",
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#FFFFFF', // Branco puro para máximo contraste
+    letterSpacing: 0.5,
   },
   headerSubtitulo: {
-    fontSize: 13,
-    color: "#CCCCCC",
-    marginTop: 4,
+    fontSize: 14,
+    color: '#9D4EDD', // Roxo claro/neon para chamar a atenção de forma suave
+    marginTop: 6,
   },
   lista: {
     padding: 16,
-    gap: 12,
   },
   card: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#1A0F30', // Roxo fechado para o corpo do card
     borderRadius: 12,
     padding: 14,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 6,
-    elevation: 3,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: '#241445', // Borda sutil para dar profundidade
   },
   cardIcone: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    backgroundColor: "#E0E0E0",
-    alignItems: "center",
-    justifyContent: "center",
+    width: 50,
+    height: 50,
+    borderRadius: 25, // Metade da largura/altura para virar um círculo perfeito
+    backgroundColor: '#7B2CBF', // Roxo vibrante de destaque
+    alignItems: 'center',
+    justifyContent: 'center',
     marginRight: 14,
   },
   cardIconeTexto: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#555555",
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
   },
   cardInfo: {
-    flex: 1,
+    flex: 1, // Ocupa todo o espaço restante à direita do ícone
   },
   cardTitulo: {
-    fontSize: 15,
-    fontWeight: "600",
-    color: "#1A1A1A",
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#FFFFFF',
     marginBottom: 4,
   },
   cardSubtitulo: {
     fontSize: 13,
-    color: "#888888",
+    color: '#C3A1E6', // Lilás pastel para garantir boa leitura no fundo escuro
   },
 });

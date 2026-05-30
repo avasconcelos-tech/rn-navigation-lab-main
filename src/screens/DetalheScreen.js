@@ -66,104 +66,109 @@ export default function DetalheScreen({ route, navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: '#0A0512', // Preto profundo com fundo levemente arroxeado
   },
   hero: {
-    backgroundColor: "#333333",
-    alignItems: "center",
+    backgroundColor: '#140927', // Roxo escuro para destacar o topo (Hero bloco)
+    alignItems: 'center',
     paddingVertical: 28,
     paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#241445', // Linha sutil separando o bloco principal do fundo
   },
   heroIcone: {
     width: 80,
     height: 80,
-    borderRadius: 40,
-    backgroundColor: "#555555",
-    alignItems: "center",
-    justifyContent: "center",
+    borderRadius: 40, // Metade da largura/altura para torná-lo um círculo perfeito
+    backgroundColor: '#7B2CBF', // Roxo vibrante de destaque
+    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 14,
   },
   heroIconeTexto: {
     fontSize: 36,
-    fontWeight: "bold",
-    color: "#FFFFFF",
+    fontWeight: 'bold',
+    color: '#FFFFFF', // Branco puro para a letra inicial
   },
   heroTitulo: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#FFFFFF",
-    textAlign: "center",
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
     marginBottom: 6,
   },
   heroSubtitulo: {
     fontSize: 14,
-    color: "#CCCCCC",
+    color: '#9D4EDD', // Roxo neon para a categoria/gênero do jogo
     marginBottom: 16,
   },
   heroMeta: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 20,
-    backgroundColor: "rgba(255,255,255,0.1)",
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(123, 44, 191, 0.15)', // Roxo neon translúcido (15% de opacidade)
     borderRadius: 12,
     paddingVertical: 10,
     paddingHorizontal: 24,
+    borderWidth: 1,
+    borderColor: '#3C1670', // Borda em tom de roxo médio
   },
   metaItem: {
-    alignItems: "center",
+    alignItems: 'center',
+    paddingHorizontal: 12,
   },
   metaLabel: {
     fontSize: 11,
-    color: "#AAAAAA",
+    color: '#A084CA', // Roxo pastel acinzentado para o rótulo ("Plataforma", "Nota")
     marginBottom: 2,
+    textTransform: 'uppercase', // Transforma o texto automaticamente em caixa alta
   },
   metaValor: {
     fontSize: 14,
-    fontWeight: "600",
-    color: "#FFFFFF",
+    fontWeight: '600',
+    color: '#FFFFFF',
   },
   metaSeparador: {
     width: 1,
     height: 28,
-    backgroundColor: "rgba(255,255,255,0.3)",
+    backgroundColor: '#3C1670', // Pequeno traço vertical roxo para dividir as informações
   },
   secao: {
     margin: 16,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#1A0F30', // Roxo fechado para o box de conteúdo
     borderRadius: 12,
     padding: 16,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.06,
-    shadowRadius: 6,
-    elevation: 2,
+    borderWidth: 1,
+    borderColor: '#241445',
   },
   secaoTitulo: {
     fontSize: 16,
-    fontWeight: "bold",
-    color: "#333333",
+    fontWeight: 'bold',
+    color: '#9D4EDD', // Roxo neon destacando o título "Sinopse"
     marginBottom: 10,
   },
   detalheTexto: {
     fontSize: 14,
-    color: "#555555",
-    lineHeight: 22,
+    color: '#C3A1E6', // Lilás pastel para uma leitura confortável no escuro
+    lineHeight: 22, // Aumenta o espaçamento entre as linhas do texto
   },
   botao: {
     margin: 16,
     marginTop: 4,
-    backgroundColor: "#333333",
+    backgroundColor: '#3C1670', // Roxo médio/sóbrio para o estado inicial (Não Salvo)
     borderRadius: 12,
     paddingVertical: 14,
-    alignItems: "center",
+    alignItems: 'center',
     marginBottom: 32,
+    borderWidth: 1,
+    borderColor: 'transparent', // Mantém o tamanho da borda pronto para transição
   },
   botaoAtivo: {
-    backgroundColor: "#555555",
+    backgroundColor: '#7B2CBF', // Muda para o roxo vibrante quando o jogo for "Salvo"
+    borderColor: '#9D4EDD', // Adiciona um contorno neon no estado ativo
   },
   botaoTexto: {
     fontSize: 15,
-    fontWeight: "bold",
-    color: "#FFFFFF",
+    fontWeight: 'bold',
+    color: '#FFFFFF',
   },
 });

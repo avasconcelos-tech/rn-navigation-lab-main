@@ -2,8 +2,7 @@ import { useState } from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { CardJogo } from '../components';
 
-// Dados de exemplo para voce visualizar o renderItem funcionando
-// Em um app real, esses itens chegariam via route.params enviados pela DetalheScreen
+
 const jogosMock = [
   {
    id: "1",
@@ -33,7 +32,7 @@ export default function ListaScreen({ route }) {
       <FlatList
         data={itensSalvos}
         keyExtractor={(item) => item.id.toString()}
-        // 2. Atualizado para renderizar o CardJogo com as suas devidas props
+        
         renderItem={({ item }) => (
           <CardJogo 
             titulo={item.titulo} 
@@ -63,67 +62,73 @@ export default function ListaScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: '#0A0512', // Preto profundo com fundo levemente arroxeado
   },
   header: {
-    backgroundColor: "#333333",
+    backgroundColor: '#140927', // Roxo bem escuro para destacar o topo
     paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 24,
+    paddingTop: 24,
+    paddingBottom: 28,
+    borderBottomWidth: 2,
+    borderBottomColor: '#3C1670', // Linha sutil em roxo intermediário
   },
   headerTitulo: {
-    fontSize: 26,
-    fontWeight: "bold",
-    color: "#FFFFFF",
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#FFFFFF', // Branco puro para máximo contraste
   },
   listaVazia: {
-    flex: 1,
+    flex: 1, // Força o container da FlatList a ocupar a tela inteira quando vazia
   },
   conteudo: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 32,
+    alignItems: 'center', // Centraliza o ícone e os textos na horizontal
+    justifyContent: 'center', // Centraliza o conteúdo na vertical (meio da tela)
+    paddingHorizontal: 32, // Margem interna grande nas laterais para o texto não tocar as bordas
   },
   iconeContainer: {
     width: 96,
     height: 96,
-    borderRadius: 48,
-    backgroundColor: "#E0E0E0",
-    alignItems: "center",
-    justifyContent: "center",
+    borderRadius: 48, // Metade da largura/altura para criar um círculo perfeito
+    backgroundColor: '#1A0F30', // Roxo fechado de fundo
+    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 20,
+    borderWidth: 2,
+    borderColor: '#7B2CBF', // Borda roxa vibrante para destacar o círculo
   },
   icone: {
     fontSize: 40,
-    fontWeight: "bold",
-    color: "#555555",
+    fontWeight: 'bold',
+    color: '#9D4EDD', // Letra/Ícone principal em roxo neon
   },
   titulo: {
     fontSize: 20,
-    fontWeight: "bold",
-    color: "#1A1A1A",
+    fontWeight: 'bold',
+    color: '#FFFFFF',
     marginBottom: 8,
-    textAlign: "center",
+    textAlign: 'center',
   },
   descricao: {
     fontSize: 16,
-    color: "#555555",
-    fontWeight: "600",
-    textAlign: "center",
+    fontWeight: '600',
+    color: '#9D4EDD', // Roxo claro/neon secundário
+    textAlign: 'center',
     marginBottom: 12,
   },
   dica: {
     fontSize: 13,
-    color: "#888888",
-    textAlign: "center",
-    lineHeight: 20,
+    color: '#C3A1E6', // Lilás pastel para leitura confortável de textos longos
+    textAlign: 'center',
+    lineHeight: 20, // Espaçamento entre as linhas da dica
   },
   card: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#1A0F30', // Roxo fechado para o corpo do card
     marginHorizontal: 16,
     marginTop: 12,
-    borderRadius: 8,
+    borderRadius: 12,
     padding: 16,
+    borderWidth: 1,
+    borderColor: '#241445', // Borda interna sutil para dar profundidade
   },
 });
