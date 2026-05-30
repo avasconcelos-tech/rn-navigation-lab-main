@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, onPress } from "react-native";
 
 export default function CardJogo({ titulo, genero, plataforma, nota }) {
   return (
