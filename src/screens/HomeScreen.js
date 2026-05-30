@@ -124,7 +124,7 @@ export default function HomeScreen({ navigation }) {
             genero={item.genero}
             plataforma={item.plataforma}
             nota={item.nota}
-            onPress={() => navigation.navigate('Detalhe', { ...item })}
+            onPress={() => alert("O clique funcionou na HomeScreen!")}
           />
         )}
         contentContainerStyle={styles.lista}
